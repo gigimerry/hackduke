@@ -1,0 +1,67 @@
+import datetime
+
+alarmHour = int(input("What hour do you want the alarm to ring? "))
+alarmMin = int(input("What minute do you want the alarm to ring? "))
+amPm = str(input("am or pm? "))
+subject = str(input("what subject would you like to study? "))
+
+print("Waiting for your alarm @", alarmHour, ":", alarmMin, amPm)
+
+while subject != ("french" or "science" or "history" or "math"):
+    print("Sorry, it seems you've only entered a word other than: history, french, science, or math. Please try entering one of these words!")
+    break
+
+
+if (amPm == "pm"):
+        alarmHour = alarmHour + 12
+
+
+while subject == "math":
+    if(alarmHour == datetime.datetime.now().hour and
+        alarmMin == datetime.datetime.now().minute) :
+        print("Time to wake up") 
+        maths = str(input("Solve the algebraic equation, 3x-20=4-x, x is what integer? "))
+        if maths == ("x=6"):
+            print("CORRECT! :)")
+        else:
+            print("INCORRECT, the correct answer is: x = 6. Move the x's to one side and the integers to another. 4x = 24 or -24 = -4x then divide by the integer in fromt of x which is 4 or -4.")
+        break
+
+
+while subject == "science":
+    if(alarmHour == datetime.datetime.now().hour and
+        alarmMin == datetime.datetime.now().minute) :
+        print("Time to wake up") 
+        sci = str(input("What type of planet is Jupiter? Print capital letter. A: Gas Giant B: Ice Giant C: Terrestial Planet "))
+        if sci == ("A"):
+            print("CORRECT! :)")
+        else:
+            print ("INCORRECT, the right answer is: A - Gas Giant")
+        break
+
+
+while subject == "history":
+    if(alarmHour == datetime.datetime.now().hour and
+        alarmMin == datetime.datetime.now().minute) :
+        print("Time to wake up") 
+        hist = str(input("What year did America declare its independence? "))
+        if hist == ("1776"):
+            print("CORRECT! :)")
+        else:
+            print("INCORRECT, the correct answer is 1776.")
+        break
+
+
+while subject == "french":
+    if(alarmHour == datetime.datetime.now().hour and
+        alarmMin == datetime.datetime.now().minute) :
+        print("Time to wake up") 
+        fren = str(input("How do you say hello in french? "))
+        if fren == ("Bonjour"):
+            print("CORRECT! :)")
+        else:
+            print("INCORRECT, the correct answer is bonjour.")
+        break
+
+
+print("Program Exited, Visit Trivial Times again soon!")
